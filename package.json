@@ -2,8 +2,30 @@
   "name": "vue-zagination",
   "version": "1.0.0",
   "description": "Vue pagination package.",
-  "main": "index.js",
+  "main": "dist/vue-zagination.min.js",
   "repository": "git@github.com:Zlatov/vue-zagination.git",
   "author": "zlatov <zlatov@ya.ru>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "cssnano": "^4.1.10",
+    "mini-css-extract-plugin": "^0.8.0",
+    "postcss-loader": "^3.0.0",
+    "sass": "^1.22.10",
+    "sass-loader": "^7.3.1",
+    "uglify-es": "^3.3.9",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
+  },
+  "scripts": {
+    "build": "./node_modules/webpack/bin/webpack.js --config webpack.config.js"
+  },
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
 }
