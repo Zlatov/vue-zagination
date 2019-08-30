@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "Vue pagination package.",
   "main": "src/vue-zagination.js",
-  "repository": "git@github.com:Zlatov/vue-zagination.git",
+  "repository": "https://git@github.com:Zlatov/vue-zagination.git",
   "author": "zlatov <zlatov@ya.ru>",
   "license": "MIT",
   "devDependencies": {
