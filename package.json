@@ -1,6 +1,6 @@
 {
   "name": "vue-zagination",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue pagination package.",
   "main": "src/vue-zagination.js",
   "repository": "git@github.com:Zlatov/vue-zagination.git",
