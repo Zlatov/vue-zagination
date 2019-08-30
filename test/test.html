@@ -6,11 +6,17 @@
   <link rel="stylesheet" type="text/css" href="public/css/css.css">
 </head>
 <body>
-  red
-  <p>green</p>
   <div id="vue-app">
     <p>{{ message }}</p>
-    <zagination></zagination>
+    <p>
+      current: <input type="number" v-model="current"><br>
+      total: <input type="number" v-model="total">
+    </p>
+    <zagination
+      :current="current"
+      :total="total"
+      @zagination_click="custom_handler"
+    ></zagination>
   </div>
   <script type="text/javascript" src="public/js/js.js"></script>
 </body>

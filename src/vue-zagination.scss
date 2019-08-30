@@ -1,8 +1,24 @@
 .vue-zagination {
-  background-color: rgba(yellow, .3);
-  .el {
-    color: black;
-    background-color: red;
-    background-image: url("images/16-16-headlights-lamborghini.jpg");
+
+  .page {
+    display: inline-block;
+    border: solid 1px gray;
+    padding: .1em .4em;
+    margin-left: .2em;
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+
+    &.active {
+      font-weight: bold;
+    }
+  }
+  .separator {
+    display: inline-block;
+    padding: .1em .2em;
+    margin-left: .2em;
+  }
+  & :first-child {
+    margin-left: 0;
   }
 }
