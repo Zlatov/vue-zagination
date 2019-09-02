@@ -103,7 +103,7 @@ module.exports = {
               //   // return url.replace('../', '/assets/')
               // },
               // TODO продолжить тут компилить изображения для css файлов, чтоб подключить скомпиленй js/css с помогщью webpak в самом проекте
-              outputPath: "../images",
+              outputPath: NODE_ENV === 'production' ? "./" : "../images",
               name: "[path][name]_[hash].[ext]"
             }
           }
