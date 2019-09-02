@@ -18,17 +18,19 @@ switch (process.env.NODE_ENV) {
     break
 }
 
+console.log('_node_env: ', _node_env)
+
 const NODE_ENV = _node_env
 
 const webpack = require("webpack")
 
 module.exports = {
   mode: NODE_ENV,
-  context: __dirname + "/test",
-  entry: "./assets/js/js",
+  context: NODE_ENV === 'production' ? null : __dirname + "/test",
+  entry: NODE_ENV === 'production' ? "./src/vue-zagination.js" : "./assets/js/js",
   output: {
-    path: __dirname + "/test/public/js",
-    filename: "js.js"
+    path: NODE_ENV === 'production' ? __dirname + "/dist" : __dirname + "/test/public/js",
+    filename: NODE_ENV === 'production' ? "vue-zagination.min.js" : "js.js"
   },
   watch: NODE_ENV == "development",
   watchOptions: {
@@ -100,7 +102,8 @@ module.exports = {
               //   console.log('url, resourcePath, context: ', url, resourcePath, context)
               //   // return url.replace('../', '/assets/')
               // },
-              outputPath: "../images",
+              // TODO продолжить тут компилить изображения для css файлов, чтоб подключить скомпиленй js/css с помогщью webpak в самом проекте
+              outputPath: NODE_ENV === 'production' ? "./" : "../images",
               name: "[path][name]_[hash].[ext]"
             }
           }
@@ -123,7 +126,7 @@ module.exports = {
   plugins: [
     // yarn add mini-css-extract-plugin --dev
     new MiniCssExtractPlugin({
-      filename: "../css/css.css"
+      filename: NODE_ENV === 'production' ? "./vue-zagination.min.css" : "../css/css.css"
     })
   ]
 }
