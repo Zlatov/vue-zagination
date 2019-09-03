@@ -10,4 +10,4 @@ yarn
 
 rm -rf ./test/public
 
-npm run build
+npm run test
