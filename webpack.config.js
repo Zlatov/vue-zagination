@@ -60,7 +60,7 @@ module.exports = {
   entry: NODE_ENV === 'production' ? "./src/vue-zagination.js" : "./assets/js/js",
   output: {
     path: NODE_ENV === 'production' ? __dirname + "/dist" : __dirname + "/test/public/js",
-    filename: NODE_ENV === 'production' ? "vue-zagination.min.js" : "js.js"
+    filename: NODE_ENV === 'production' ? "vue-zagination.js" : "js.js"
   },
   watch: NODE_ENV == "development",
   watchOptions: {
@@ -160,7 +160,7 @@ module.exports = {
   plugins: [
     // yarn add mini-css-extract-plugin --dev
     new MiniCssExtractPlugin({
-      filename: NODE_ENV === 'production' ? "./vue-zagination.min.css" : "../css/css.css"
+      filename: NODE_ENV === 'production' ? "./vue-zagination.css" : "../css/css.css"
     })
     // new MinifyPlugin(minifyOpts, pluginOpts)
   ]
