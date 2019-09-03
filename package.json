@@ -1,9 +1,11 @@
 {
   "name": "vue-zagination",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Vue pagination package.",
   "main": "dist/vue-zagination.js",
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "repository": "https://git@github.com:Zlatov/vue-zagination.git",
   "author": "zlatov <zlatov@ya.ru>",
   "license": "MIT",
