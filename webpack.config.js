@@ -57,7 +57,7 @@ const webpack = require("webpack")
 module.exports = {
   mode: NODE_ENV,
   context: NODE_ENV === 'production' ? null : __dirname + "/test",
-  entry: NODE_ENV === 'production' ? "./src/vue-zagination.jsx" : "./assets/js/js",
+  entry: NODE_ENV === 'production' ? "./src/vue-zagination.js" : "./assets/js/js",
   output: {
     path: NODE_ENV === 'production' ? __dirname + "/dist" : __dirname + "/test/public/js",
     filename: NODE_ENV === 'production' ? "vue-zagination.min.js" : "js.js"
