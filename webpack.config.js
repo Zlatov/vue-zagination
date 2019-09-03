@@ -19,6 +19,36 @@ switch (process.env.NODE_ENV) {
 }
 
 console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
+console.log('_node_env: ', _node_env)
 
 const NODE_ENV = _node_env
 
@@ -27,7 +57,7 @@ const webpack = require("webpack")
 module.exports = {
   mode: NODE_ENV,
   context: NODE_ENV === 'production' ? null : __dirname + "/test",
-  entry: NODE_ENV === 'production' ? "./src/vue-zagination.js" : "./assets/js/js",
+  entry: NODE_ENV === 'production' ? "./src/vue-zagination.jsx" : "./assets/js/js",
   output: {
     path: NODE_ENV === 'production' ? __dirname + "/dist" : __dirname + "/test/public/js",
     filename: NODE_ENV === 'production' ? "vue-zagination.min.js" : "js.js"
@@ -37,6 +67,7 @@ module.exports = {
     aggregateTimeout: 300
   },
   devtool: NODE_ENV == "development" ? "cheap-inline-module-source-map" : false,
+  // devtool: NODE_ENV == "development" ? "cheap-inline-module-source-map" : "cheap-inline-module-source-map",
   plugins: [
     new webpack.EnvironmentPlugin(["NODE_ENV", "USER"]),
     new webpack.DefinePlugin({
@@ -46,19 +77,22 @@ module.exports = {
   ],
   optimization: {
     minimize: NODE_ENV == "development" ? false : true
+    // minimize: NODE_ENV == "development" ? false : false
   },
   module: {
     rules: [
       // ES6 в ES5 (babel)
       // npm install -D babel-loader @babel/core @babel/preset-env webpack
       {
-        test: /\.m?js$/,
+        // test: /\.m?js$/,
+        test: /\.jsx?$/,
         exclude: /(node_modules)/,
         use: {
           loader: "babel-loader",
           // npm i @babel/plugin-transform-runtime
           options: {
-            plugins: ["@babel/plugin-transform-runtime"]
+            // plugins: ["@babel/plugin-transform-runtime"]
+            presets: ["@babel/preset-env"]
           }
         }
       },
@@ -128,5 +162,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: NODE_ENV === 'production' ? "./vue-zagination.min.css" : "../css/css.css"
     })
+    // new MinifyPlugin(minifyOpts, pluginOpts)
   ]
 }

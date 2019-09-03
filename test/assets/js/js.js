@@ -2,7 +2,7 @@ import '../css/scss.scss'
 
 import Vue from "vue/dist/vue.min.js";
 
-import zagination from '../../../src/vue-zagination';
+import zagination from '../../../src/vue-zagination.jsx';
 window.zagination = zagination
 
 Vue.component("zagination", zagination)
