@@ -5,12 +5,9 @@ const webpack = require("webpack")
 const path = require('path');
 
 module.exports = {
-  mode: "production",
-  resolve: {
-    modules: [path.resolve(__dirname, "modules"), "node_modules"]
-  },
+  mode: "development",
   context: __dirname + "/test",
-  entry: "./assets/js/js",
+  entry: "./assets/js/js_dev",
   output: {
     path: __dirname + "/test/public/js",
     filename: "js.js"
@@ -74,7 +71,7 @@ module.exports = {
     new webpack.DefinePlugin({
       // 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
       // LANG: '"ru"',
-      DEV: false,
+      DEV: true,
     }),
     new MiniCssExtractPlugin({
       filename: "../css/css.css"

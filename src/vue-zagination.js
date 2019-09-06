@@ -15,7 +15,8 @@ var vue_zagination = {
       central_max: 2,
       side_max: 3,
       is_prev_next: true,
-      is_first_last: true
+      is_first_last: true,
+      is_hide_one: true,
     }
     return {
       options: Object.assign(default_options, this.custom_options || {})
@@ -137,7 +138,7 @@ var vue_zagination = {
   },
 
   template: `
-    <div class="vue-zagination">
+    <div class="vue-zagination" v-if="!options.is_hide_one || valid_total > 1">
       <a
         href=""
         v-if="is_first_page"
